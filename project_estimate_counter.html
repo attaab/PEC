@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta http-equiv="refresh" content="">
+  <title>trying this thing</title>
+  <style type="text/css">
+    .items{
+      
+    }
+    .btn_container{
+     
+    }
+   #table{
+      display: none;
+      left: 50%;
+    }
+  </style>
+</head>
+<body>
+
+      
+     <div class="items">
+        
+            <label>plan by Number of guests</label>
+
+
+
+        <form>
+            <input id="sort_tool" type="number" value="" name="">
+            <input type="button" id="button" value="Estimate" name="" onclick="budget(), displayItems();">
+        </form>
+
+
+
+            <table id="table" border="1" style="width:20%">
+              <tr>
+                <th><h3>Item Name</h3></th>
+                <th><h3>₦</h3></th>
+              </tr>
+              <tr>
+                <td id="td1">hall</td>
+                <td id="td2">0000</td>
+              </tr>
+              <tr>
+                <td id="tda2">catering</td>
+                <td id="tdb2">0000</td> 
+              </tr>
+               <tr>
+                <td id="tda3">Entertainment</td>
+                <td id="tdb3">0000</td> 
+              </tr>
+               <tr>
+                <td id="tda4">total</td>
+                <td id="tdb4">00000</td> 
+              </tr>
+            </table>
+        </div>
+       
+
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+      function displayItems(){
+        document.getElementById('table').style.display = 'block';
+      }
+      function budget(){
+        // the variables
+        var td1, td2, tda2, tdb2,tda4,tdb4,tda3,tdb3, input;
+         td1 = $('#td1');
+         td2 = $('#td2');
+         tda2 = $('#tda2');
+         tdb2 = $('#tdb2');
+         tda3 = $('#tda3');
+         tdb3 = $('#tdb3');
+         tda4 = $('#tda4');
+         tdb4 = $('#tdb4');
+         
+         
+        // catching the input value
+          input = $('#sort_tool').val();
+
+           //calculating for range btween two ranges
+
+            if(input >= 100 && input <= 199){
+                    td2.text(persons[0].hall);
+                    tdb2.text(persons[0].catering);
+                    tdb3.text(persons[0].Entertainment);
+                    tdb4.text(persons[0].total);
+                    return;
+                  }if(input >= 200 && input <= 299){
+                    td2.text(persons[1].hall);
+                    tdb2.text(persons[1].catering);
+                    tdb3.text(persons[1].Entertainment);
+                    tdb4.text(persons[1].total);
+                    return;
+                 }if(input >= 300 && input <= 399){
+                    td2.text(persons[2].hall);
+                    tdb2.text(persons[2].catering);
+                    tdb3.text(persons[2].Entertainment);
+                    tdb4.text(persons[2].total);
+                    return;
+                 }if(input >= 400 && input <= 500){
+                    td2.text(persons[3].hall);
+                    tdb2.text(persons[3].catering);
+                    tdb3.text(persons[3].Entertainment);
+                    tdb4.text(persons[3].total);
+                    return;
+                 }
+                 
+           }
+
+         
+
+
+
+
+            // json filed
+            var persons = [
+
+               // 100 - 199
+            {"hall": "₦200",
+              "catering":"₦500",
+              "Entertainment":"₦300",
+              "total":"₦1000"},
+
+                  // 200 - 299
+              {"hall": "₦800",
+              "catering":"₦1000",
+              "Entertainment":"₦600",
+              "total":"₦2400"},
+
+              //300 - 399
+              {"hall": "₦1200",
+              "catering":"₦1500",
+              "Entertainment":"₦1000",
+              "total":"₦3700"},
+
+              //400 - 500
+              {"hall": "₦1800",
+              "catering":"₦2000",
+              "Entertainment":"₦1000",
+              "total":"₦4800"}
+            ];
+    </script>
+</body>
+</html>
